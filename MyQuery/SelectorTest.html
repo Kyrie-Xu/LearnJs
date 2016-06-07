@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../Script/jquery-1.6.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+//            $('#MySelect>option[value="3"]').attr('selected','selected');
+//            console.log($('#MySelect :selected').val())
+
+
+            $('#btnselect').click(function () {
+                console.log($('#div1 ~ p').text())
+            })
+
+            $('#btnNum').click(function(){
+
+                alert('选中的check个数'+ $('input[type="checkbox"]:checked').length);
+            })
+            $('#btnchecked').toggle(function(){
+                $('input[value="yy"]').attr('checked','checked');
+                this.value = "取消选中英语"
+            },function(){
+                $('input[value="yy"]').removeAttr('checked');
+                this.value='选中英语';
+            })
+            
+            $('#btnValue').click(function () {
+
+                $.each($('input[type="checkbox"]:checked').toArray(), function (index,item) {
+                    console.log(item.value)
+                })
+            })
+
+
+        });
+    </script>
+</head>
+<body>
+
+<div id="div1">
+    <div>
+        <div></div>
+    </div>
+    <div></div>
+    <div></div>
+    <p></p>
+</div>
+<p>4</p>
+
+<select id="MySelect">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
+<input id="btnselect" type="button" value="获取select">
+
+<br />
+<input type="checkbox" value="yy" />英语
+<input type="checkbox" value="sx" />数学
+<input type="checkbox" value="yw" />语文
+<input type="checkbox" value="ls" />历史
+<input id="btnchecked" type="button" value="选中英语" />
+
+<input id="btnNum" type="button" value="获取选中个数" />
+<input id="btnValue" type="button" value="获取选中值" />
+</body>
+</html>

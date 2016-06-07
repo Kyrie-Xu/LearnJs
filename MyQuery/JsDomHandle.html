@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../Script/jquery-1.6.2.js"></script>
+    <script type="text/javascript">
+        function load () {
+            //js操作
+            var jsdiv = document.createElement("div");
+            jsdiv.id = 'javascriptDiv';
+            jsdiv.className = 'javascriptClass';
+            var jsp = document.createElement("p");
+            jsp.id="javascriptP"
+            var jstext = document.createTextNode("hello javascript");
+            jsp.appendChild(jstext);
+            jsdiv.appendChild(jsp)
+
+            document.body.appendChild(jsdiv);
+//            jsdiv.removeChild(jsp);
+//            jsp.removeChild(jstext)
+
+            //jQuery操作
+            var body = $('body');
+            var div = $('<div id="jQueryDiv"><p id="jQueryp">hello jQuery</p></div>')
+            body.append(div)
+
+            //$('#jQueryp').remove();
+
+        }
+    </script>
+</head>
+<body onload="load()">
+
+
+</body>
+</html>

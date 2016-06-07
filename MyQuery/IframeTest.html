@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript" src="../Script/jquery-1.6.2.js"></script>
-    <script type="text/javascript">
-        $(function(){
 
-        })
-    </script>
 </head>
 <body>
     <iframe id="ifr" name="ifr" src="MyIframe.html"></iframe>
+
+    <script type="text/javascript">
+        $(function(){
+            $('#ifr').load(function(){
+                $('#ifr').contents().find('#btn').toggle(function(){
+                    $('#ifr').contents().find('#div1').css('color','red');
+                },function(){
+                    $('#ifr').contents().find('#div1').css('color','green');
+                })
+            })
+        })
+
+    </script>
 </body>
 </html>
