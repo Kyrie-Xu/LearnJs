@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>单例模式</title>
+    <script type="text/javascript" src="../Script/jquery-1.6.2.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            var Singleton = (function () {
+
+                var _singleton;
+                var privateString = 'this is a Singleton tester';
+
+                function init(){
+                   return {
+                       publicMethod: function () {
+                           console.log(privateString)
+                       }
+                   }
+                }
+
+                return {
+                    getInstance : function () {
+                        if(_singleton == undefined){
+                            _singleton = init();
+                        }
+                        return _singleton;
+                    }
+                }
+            })();
+
+            Singleton.getInstance().publicMethod();
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

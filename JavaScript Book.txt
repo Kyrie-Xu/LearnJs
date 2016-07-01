@@ -57,3 +57,5 @@ NG react vue Node
 　　《测试驱动的JavaScript开发》
 
 　　《Design by Contract 原则与实践》
+js dom编程艺术(2 version)->js高级程序设计 (3 version)-> js dom高级程序设计 -> js 语言精粹 -> 精通js -> 编写可维护的js ->
+高性能js -> js面向对象编程指南  -> js模式 -> js权威指南(6 version) -> js语言精髓与编程实践
