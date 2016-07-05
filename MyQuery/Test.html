@@ -7,25 +7,31 @@
     <script type="text/javascript" src="../Script/xQuery.js"></script>
     <script type="text/javascript">
 
-//        $(function () {
-//            var str = '^[0-9]{1,20}$';
-//            var parrtern = new RegExp("^[0-9]{1,20}$");
-//            var array = ['0','zzzz','ddddd','1111111'];
-//
-//            var result = [];
-//            for (var i = 0; i < array.length; i++) {
-//                var obj = array[i].toString();
-//                console.log(obj);
-//                var xx = parrtern.exec(obj);
-//                console.log(xx);
-//                xx && result.push(xx);
-//            }
-//
-//            console.log(result[1][0]);
-//        })
+        $(function () {
+
+            var obj1 = {
+                name:'kyrie',
+                age: 28
+
+            }
+            var obj2 = {
+                name:'xuyang',
+                sex:1
+            }
+
+            var result1 = $.extend(obj1,obj2);
+            var result2 = $.extend({},obj1,obj2);
+
+            var newobj1 = XY.clone(true,obj1);
+            console.log(newobj1 == obj1);
+
+            var newobj2 = JSON.parse(JSON.stringify(obj1))
+            console.log(newobj2 == obj1);
+
+        })
     </script>
 </head>
 <body>
-    <div id="result"></div>
+    <div id="result">ddd</div>
 </body>
 </html>

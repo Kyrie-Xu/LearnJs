@@ -107,10 +107,10 @@ jQuery.fn = jQuery.prototype = {
 		}
 
 		// Handle $(DOMElement)
-		if ( selector.nodeType ) {
-			this.context = this[0] = selector;
-			this.length = 1;
-			return this;
+            if ( selector.nodeType ) {
+                this.context = this[0] = selector;
+                this.length = 1;
+                return this;
 		}
 
 		// The body element only exists once, optimize finding it
@@ -324,6 +324,7 @@ jQuery.fn.init.prototype = jQuery.fn;
 
 jQuery.extend = jQuery.fn.extend = function() {
 	var options, name, src, copy, copyIsArray, clone,
+        //第一个参数复制给target
 		target = arguments[0] || {},
 		i = 1,
 		length = arguments.length,
@@ -333,7 +334,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 	if ( typeof target === "boolean" ) {
 		deep = target;
 		target = arguments[1] || {};
-		// skip the boolean and the target
+		// skip the boolean and the target  跳过前两个，直接从第三个开始
 		i = 2;
 	}
 
@@ -916,13 +917,13 @@ if ( document.addEventListener ) {
 	};
 
 } else if ( document.attachEvent ) {
-	DOMContentLoaded = function() {
-		// Make sure body exists, at least, in case IE gets a little overzealous (ticket #5443).
-		if ( document.readyState === "complete" ) {
-			document.detachEvent( "onreadystatechange", DOMContentLoaded );
-			jQuery.ready();
-		}
-	};
+    DOMContentLoaded = function() {
+        // Make sure body exists, at least, in case IE gets a little overzealous (ticket #5443).
+        if ( document.readyState === "complete" ) {
+            document.detachEvent( "onreadystatechange", DOMContentLoaded );
+            jQuery.ready();
+        }
+    };
 }
 
 // The DOM ready check for Internet Explorer
